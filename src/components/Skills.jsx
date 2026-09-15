@@ -39,19 +39,19 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="border-t border-slate-800 bg-slate-900 px-6 py-24"
+      className="border-t border-slate-200 bg-slate-50 px-6 py-24 transition-colors duration-300 dark:border-slate-800 dark:bg-slate-900"
     >
       <div className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-slate-400">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
             Skills
           </p>
 
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
             Technologies and tools I work with.
           </h2>
 
-          <p className="mt-5 text-lg leading-8 text-slate-400">
+          <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-400">
             A selection of technologies and development practices I have
             worked with through academic projects, personal development
             and practical training.
@@ -62,9 +62,9 @@ function Skills() {
           {skillGroups.map((group) => (
             <div
               key={group.title}
-              className="rounded-xl border border-slate-800 bg-slate-950 p-6"
+              className="rounded-xl border border-slate-200 bg-white p-6 transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950"
             >
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                 {group.title}
               </h3>
 
@@ -72,7 +72,7 @@ function Skills() {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-md border border-slate-800 bg-slate-900 px-3 py-2 text-sm text-slate-300"
+                    className="rounded-md border border-slate-200 bg-slate-100 px-3 py-2 text-sm text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
                   >
                     {skill}
                   </span>

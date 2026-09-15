@@ -67,25 +67,24 @@ function Projects() {
       demoVideo: 'https://www.youtube.com/embed/xirtxlqTUQw',
       status: 'Project',
     },
-    
   ]
 
   return (
     <section
       id="projects"
-      className="border-t border-slate-800 bg-slate-950 px-6 py-24"
+      className="border-t border-slate-200 bg-white px-6 py-24 transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950"
     >
       <div className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-slate-400">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
             Projects
           </p>
 
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
             Projects that demonstrate how I build.
           </h2>
 
-          <p className="mt-5 text-lg leading-8 text-slate-400">
+          <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-400">
             A selection of academic, personal and practical software
             development projects covering full-stack development, databases,
             APIs, Python and application architecture.
