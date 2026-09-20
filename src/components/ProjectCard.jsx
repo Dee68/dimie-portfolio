@@ -5,6 +5,9 @@ function ProjectCard({
   githubUrl,
   status,
   demoVideo,
+  caseStudyUrl,
+  demoUrl,
+  demoStatus,
 }) {
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-slate-50 transition duration-300 hover:-translate-y-1 hover:border-slate-400 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-600">
@@ -51,7 +54,7 @@ function ProjectCard({
           ))}
         </div>
 
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <a
             href={githubUrl}
             target="_blank"
@@ -64,7 +67,50 @@ function ProjectCard({
               →
             </span>
           </a>
-        </div>
+        </div> */}
+        <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+  {githubUrl && (
+    <a
+      href={githubUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center font-medium text-slate-900 transition hover:text-slate-600 dark:text-white dark:hover:text-slate-300"
+    >
+      View on GitHub
+      <span className="ml-2 transition-transform group-hover:translate-x-1">
+        →
+      </span>
+    </a>
+  )}
+
+  {caseStudyUrl && (
+    <a
+      href={caseStudyUrl}
+      className="inline-flex items-center font-medium text-slate-700 transition hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-100"
+    >
+      Project Case Study
+      <span className="ml-2">→</span>
+    </a>
+  )}
+
+  {demoUrl && (
+    <a
+      href={demoUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center font-medium text-slate-700 transition hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-100"
+    >
+      Live Demo
+      <span className="ml-2">↗</span>
+    </a>
+  )}
+
+  {demoStatus && (
+    <span className="text-sm text-slate-500 dark:text-slate-500">
+      {demoStatus}
+    </span>
+  )}
+</div>
       </div>
     </article>
   )

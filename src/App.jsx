@@ -1,3 +1,5 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Navbar from './components/Navbar'
 import About from './components/About'
 import Projects from './components/Projects'
@@ -5,10 +7,11 @@ import Skills from './components/Skills'
 import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import MyBookyCaseStudy from './components/MyBookyCaseStudy'
 
-function App() {
+function PortfolioHome() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white">
+    <>
       <Navbar />
 
       <section
@@ -29,8 +32,8 @@ function App() {
           </p>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400">
-            Building practical full-stack applications and developing expertise in
-            cybersecurity.
+            Building practical full-stack applications and developing
+            expertise in cybersecurity.
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -53,15 +56,35 @@ function App() {
         </div>
       </section>
 
-
-
       <About />
       <Projects />
       <Skills />
       <Education />
       <Contact />
       <Footer />
-    </main>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <main className="min-h-screen bg-white text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white">
+              <PortfolioHome />
+            </main>
+          }
+        />
+
+        <Route
+          path="/projects/mybooky"
+          element={<MyBookyCaseStudy />}
+        />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

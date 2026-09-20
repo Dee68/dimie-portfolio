@@ -17,15 +17,20 @@ function Projects() {
       status: 'Featured',
     },
     {
-      title: 'MyBooky',
+      title: 'MyBooky — E-Commerce Bookstore',
       description:
-        'A full-stack software development project completed as part of my BSc (Hons) in Computing in Contemporary Software Development.',
+        'Full-stack e-commerce application developed as my BSc (Hons) Contemporary Software Development project. Built with ASP.NET Core MVC, C#, Entity Framework Core and SQL Server, featuring authentication, role-based access, catalogue management, shopping cart, order management and Stripe payment integration.',
       technologies: [
-        'Full-Stack Development',
-        'Database',
-        'Web Development',
+        'ASP.NET Core MVC',
+        'C#',
+        'Entity Framework Core',
+        'SQL Server',
+        'ASP.NET Identity',
+        'Stripe',
       ],
       githubUrl: 'https://github.com/Dee68/MyBooky',
+      caseStudyUrl: '/projects/mybooky',
+      demoStatus: 'Deployment: Previously deployed to Microsoft Azure; the original deployment is currently offline.',
       status: 'Featured',
     },
     {
@@ -101,6 +106,9 @@ function Projects() {
               githubUrl={project.githubUrl}
               status={project.status}
               demoVideo={project.demoVideo}
+              caseStudyUrl={project.caseStudyUrl}
+              demoUrl={project.demoUrl}
+              demoStatus={project.demoStatus}
             />
           ))}
         </div>
