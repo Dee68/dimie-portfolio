@@ -1,16 +1,41 @@
+import { Link } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
+import { FiArrowLeft } from 'react-icons/fi'
+
 function MyBookyCaseStudy() {
+  
   return (
     <main className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
       {/* Hero */}
       <section className="border-b border-slate-200 dark:border-slate-800">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-          <a
-            href="/#projects"
-            className="inline-flex items-center text-sm font-medium text-slate-500 transition hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-          >
-            ← Back to Projects
-          </a>
+        <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 transition hover:text-slate-950 dark:text-slate-300 dark:hover:text-white"
+            >
+              <FiArrowLeft size={16} />
+              <span>Back to Projects</span>
+            </Link>
+
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+
+              <a
+                href="https://github.com/Dee68/MyBooky"
+                target="_blank"
+                rel="noreferrer"
+                className="hidden rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:border-slate-400 hover:bg-slate-100 dark:border-slate-700 dark:text-white dark:hover:border-slate-500 dark:hover:bg-slate-900 sm:block"
+              >
+                GitHub
+              </a>
+            </div>
+
+          </div>
+        </header>
+        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+          
           <div className="mt-10 max-w-4xl">
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
               Featured Project
@@ -595,7 +620,7 @@ function MyBookyCaseStudy() {
               Explore the source code and project structure on GitHub.
             </p>
           </div>
-
+ 
           <a
             href="https://github.com/Dee68/MyBooky"
             target="_blank"

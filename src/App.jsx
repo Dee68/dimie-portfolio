@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from './context/ThemeContext'
 
 import Navbar from './components/Navbar'
 import About from './components/About'
@@ -68,23 +69,25 @@ function PortfolioHome() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <main className="min-h-screen bg-white text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white">
-              <PortfolioHome />
-            </main>
-          }
-        />
+    <ThemeProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <main className="min-h-screen bg-white text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white">
+                <PortfolioHome />
+              </main>
+            }
+          />
 
-        <Route
-          path="/projects/mybooky"
-          element={<MyBookyCaseStudy />}
-        />
-      </Routes>
-    </BrowserRouter>
+          <Route
+            path="/projects/mybooky"
+            element={<MyBookyCaseStudy />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 
