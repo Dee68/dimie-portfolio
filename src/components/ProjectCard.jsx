@@ -1,3 +1,4 @@
+import { FiArrowRight } from 'react-icons/fi'
 function ProjectCard({
   title,
   description,
@@ -54,20 +55,7 @@ function ProjectCard({
           ))}
         </div>
 
-        {/* <div className="mt-6">
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center font-medium text-slate-900 transition hover:text-slate-600 dark:text-white dark:hover:text-slate-300"
-          >
-            View on GitHub
-
-            <span className="ml-2 transition-transform group-hover:translate-x-1">
-              →
-            </span>
-          </a>
-        </div> */}
+       
         <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
   {githubUrl && (
     <a
@@ -101,7 +89,9 @@ function ProjectCard({
       className="inline-flex items-center font-medium text-slate-700 transition hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-100"
     >
       Live Demo
-      <span className="ml-2">↗</span>
+      <span className="ml-2">
+        <FiArrowRight size={16}/>
+      </span>
     </a>
   )}
 

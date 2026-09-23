@@ -3,17 +3,21 @@ import ProjectCard from './ProjectCard'
 function Projects() {
   const projects = [
     {
-      title: 'D-BookShop',
+      title: 'D-BookShop — Full-Stack E-Commerce Platform',
       description:
-        'A full-stack online bookshop application demonstrating frontend and backend development, database integration, authentication and deployment.',
+        'A production-deployed full-stack e-commerce application built with React, Node.js, Express and PostgreSQL. Features include authentication, role-based access control, product and inventory management, shopping cart, checkout, order management, email verification and an administrative dashboard.',
       technologies: [
         'React',
         'Node.js',
         'Express',
         'PostgreSQL',
+        'JWT',
+        'Tailwind CSS',
         'REST API',
       ],
       githubUrl: 'https://github.com/Dee68/D_BookShop',
+      caseStudyUrl: '/projects/d-bookshop',
+      demoUrl: 'https://d-book-shop.vercel.app',
       status: 'Featured',
     },
     {
