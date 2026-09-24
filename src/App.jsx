@@ -9,6 +9,7 @@ import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import MyBookyCaseStudy from './components/MyBookyCaseStudy'
+import DBookShopCaseStudy from './components/DbookShopCaseStudy'
 
 function PortfolioHome() {
   return (
@@ -80,6 +81,11 @@ function App() {
               </main>
             }
           />
+
+          <Route path='/projects/d-bookshop'
+            element={<DBookShopCaseStudy />}
+            />
+        
 
           <Route
             path="/projects/mybooky"
