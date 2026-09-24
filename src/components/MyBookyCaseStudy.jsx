@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 import { FiArrowLeft } from 'react-icons/fi'
+import Footer from './Footer'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 function MyBookyCaseStudy() {
-  
+  useDocumentTitle('MyBooky Case Study | Dimie Egberipou')
   return (
+    <>
     <main className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
       {/* Hero */}
-      <section className="border-b border-slate-200 dark:border-slate-800">
+      <section id="home" className="border-b border-slate-200 dark:border-slate-800">
         <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 
@@ -633,6 +636,8 @@ function MyBookyCaseStudy() {
         </div>
       </section>
     </main>
+    <Footer />
+    </>
   )
 }
 

@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'
 
 import Navbar from './components/Navbar'
@@ -10,8 +11,18 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import MyBookyCaseStudy from './components/MyBookyCaseStudy'
 import DBookShopCaseStudy from './components/DbookShopCaseStudy'
+import { useDocumentTitle } from './hooks/useDocumentTitle'
 
 function PortfolioHome() {
+  useDocumentTitle('Dimie Egberipou | Software Developer')
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) return
+    const el = document.querySelector(hash)
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }, [hash])
+
   return (
     <>
       <Navbar />
@@ -21,7 +32,7 @@ function PortfolioHome() {
         className="flex min-h-screen items-center justify-center bg-white px-6 pt-20 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white"
       >
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-[#8a8757] dark:text-[#c3c183]">
             Welcome to my portfolio
           </p>
 
@@ -41,7 +52,7 @@ function PortfolioHome() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
               href="#projects"
-              className="rounded-lg bg-slate-900 px-6 py-3 font-medium text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+              className="rounded-lg bg-slate-900 px-6 py-3 font-medium text-white transition hover:bg-[#8a8757] dark:bg-white dark:text-slate-950 dark:hover:bg-[#c3c183] dark:hover:text-slate-950"
             >
               View My Projects
             </a>
@@ -81,16 +92,8 @@ function App() {
               </main>
             }
           />
-
-          <Route path='/projects/d-bookshop'
-            element={<DBookShopCaseStudy />}
-            />
-        
-
-          <Route
-            path="/projects/mybooky"
-            element={<MyBookyCaseStudy />}
-          />
+          <Route path="/projects/d-bookshop" element={<DBookShopCaseStudy />} />
+          <Route path="/projects/mybooky" element={<MyBookyCaseStudy />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
