@@ -92,8 +92,8 @@ function App() {
               </main>
             }
           />
-          <Route path="/projects/d-bookshop" element={<DBookShopCaseStudy />} />
-          <Route path="/projects/mybooky" element={<MyBookyCaseStudy />} />
+          <Route path="/d-bookshop" element={<DBookShopCaseStudy />} />
+          <Route path="/mybooky" element={<MyBookyCaseStudy />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

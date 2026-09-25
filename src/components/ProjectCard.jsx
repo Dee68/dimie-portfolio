@@ -1,4 +1,4 @@
-import { FiArrowRight } from 'react-icons/fi'
+import { FiArrowRight, FiExternalLink } from 'react-icons/fi'
 function ProjectCard({
   title,
   description,
@@ -65,9 +65,7 @@ function ProjectCard({
       className="inline-flex items-center font-medium text-slate-900 transition hover:text-slate-600 dark:text-white dark:hover:text-slate-300"
     >
       View on GitHub
-      <span className="ml-2 transition-transform group-hover:translate-x-1">
-        →
-      </span>
+     <FiExternalLink className="ml-2" size={16} />
     </a>
   )}
 
