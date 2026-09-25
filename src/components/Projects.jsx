@@ -51,31 +51,20 @@ function Projects() {
       status: 'Work in Progress',
     },
     {
-      title: 'Tkinter Game',
+      title: 'Python Game Development',
       description:
-        'A Python desktop game project exploring object-oriented programming, graphical interfaces, game states and event-driven programming.',
+        'Two desktop games built to explore Python outside of web development. The Tkinter project focuses on GUI construction, game states and event-driven programming; the Pygame project explores real-time gameplay and game loops. Both repositories are available on GitHub.',
       technologies: [
         'Python',
         'Tkinter',
+        'Pygame',
         'OOP',
       ],
       githubUrl: 'https://github.com/Dee68/ptkinter_game',
       demoVideo: 'https://www.youtube.com/embed/eFZiqXyXfOo',
       status: 'Project',
     },
-    {
-      title: 'Pygame Application',
-      description:
-        'A Python game development project focused on interactive gameplay, programming logic and graphical application development.',
-      technologies: [
-        'Python',
-        'Pygame',
-        'Game Development',
-      ],
-      githubUrl: 'https://github.com/Dee68/pygame_app',
-      demoVideo: 'https://www.youtube.com/embed/xirtxlqTUQw',
-      status: 'Project',
-    },
+   
   ]
 
   return (

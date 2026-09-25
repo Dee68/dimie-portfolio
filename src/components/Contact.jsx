@@ -98,9 +98,15 @@ function Contact() {
           </h2>
 
           <p className="mt-5 text-lg leading-8 text-[slate-600] dark:text-slate-400">
-            I am open to opportunities in software development and
-            technology. If you would like to discuss a project,
-            apprenticeship or career opportunity, feel free to get in touch.
+            I'm currently looking for software development roles — full-time,
+            graduate or contract — where I can work on full-stack applications
+            and continue developing my knowledge of secure software
+            development. I'm based in Ireland and open to remote, hybrid or
+            on-site work.
+          </p>
+          <p className="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-400">
+            The fastest way to reach me is by email. I usually respond within
+            a day.
           </p>
         </div>
 
@@ -223,19 +229,13 @@ function Contact() {
           {/* Direct links */}
           <div>
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-              Prefer to reach out directly?
+               Find me elsewhere
             </h3>
             <p className="mt-3 text-slate-600 dark:text-slate-400">
-              You can also find me on these platforms.
+              More of my work and background is available here.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-4">
-              <a
-                href="mailto:ddimie283@gmail.com"
-                className="rounded-lg border border-slate-300 bg-white px-5 py-3 font-medium text-slate-900 transition hover:border-slate-400 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:hover:border-slate-500 dark:hover:bg-slate-900"
-              >
-                Email Me
-              </a>
 
               <a
                 href="https://github.com/Dee68"

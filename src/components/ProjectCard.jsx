@@ -75,7 +75,8 @@ function ProjectCard({
       className="inline-flex items-center font-medium text-slate-700 transition hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-100"
     >
       Project Case Study
-      <span className="ml-2">→</span>
+     <FiArrowRight className="ml-2" size={16} />
+      
     </a>
   )}
 

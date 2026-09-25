@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
-import { FiArrowLeft } from 'react-icons/fi'
+import { FiArrowLeft, FiInfo } from 'react-icons/fi'
 import Footer from './Footer'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
@@ -86,10 +86,11 @@ function MyBookyCaseStudy() {
                 className="inline-flex items-center rounded-lg bg-slate-900 px-5 py-3 font-medium text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
               >
                 View on GitHub
-                <span className="ml-2">↗</span>
+                <FiExternalLink className="ml-2" size={16} />
               </a>
 
               <span className="inline-flex items-center rounded-lg border border-slate-200 px-5 py-3 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400">
+                <FiInfo size={16} className="mr-2" />
                 Previously deployed to Microsoft Azure · Demo offline
               </span>
             </div>
@@ -631,7 +632,8 @@ function MyBookyCaseStudy() {
             className="inline-flex w-fit items-center rounded-lg bg-slate-900 px-5 py-3 font-medium text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
           >
             GitHub Repository
-            <span className="ml-2">↗</span>
+            <FiExternalLink className="ml-2" size={16} />
+            
           </a>
         </div>
       </section>

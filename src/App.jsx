@@ -32,21 +32,21 @@ function PortfolioHome() {
         className="flex min-h-screen items-center justify-center bg-white px-6 pt-20 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white"
       >
         <div className="mx-auto max-w-4xl text-center">
+          <div className="mx-auto mb-6 h-px w-16 bg-slate-300 dark:bg-slate-700" />
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
             Welcome to my portfolio
           </p>
 
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-slate-900 dark:text-white">
+          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-slate-900 dark:text-white">
             Dimie Egberipou
           </h1>
 
-          <p className="mt-6 text-xl font-medium text-#45402F text-slate-700 dark:text-slate-300 sm:text-2xl">
-            Computing Graduate | Software Developer
+          <p className="mt-4 text-lg font-medium uppercase tracking-[0.15em] text-slate-500 dark:text-slate-400">
+            Software Developer
           </p>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400">
-            Building practical full-stack applications and developing
-            expertise in cybersecurity.
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400">
+            Building practical full-stack applications and developing expertise in cybersecurity.
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
