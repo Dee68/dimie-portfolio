@@ -43,10 +43,10 @@ function Skills() {
     >
       <div className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-[#8a8757] dark:text-[#c3c183]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
             Skills
           </p>
-          <div className="mb-6 h-0.5 w-16 bg-[#c3c183]" />
+          {/* <div className="mb-6 h-0.5 w-16 bg-[#c3c183]" /> */}
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
             Technologies and tools I work with.
           </h2>

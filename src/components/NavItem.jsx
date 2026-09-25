@@ -25,7 +25,7 @@ function NavItem({
 
   // Active: border + bold text, but text colour stays default
   const active =
-     'border-2 border-[#c3c183] font-semibold text-slate-900 dark:text-[#c3c183]'
+     'border-2 border-slate-900 font-semibold text-slate-900 dark:border-white dark:text-white'
 
   const classes = [
     base,

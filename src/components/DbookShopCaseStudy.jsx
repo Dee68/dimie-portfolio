@@ -646,7 +646,6 @@ function DBookShopCaseStudy() {
 
         </div>
       </section>
-      {/*API & Business Rule*/}
       {/* API & Business Rules */}
       <section className="border-t border-slate-200 py-20 dark:border-slate-800">
         <div className="mx-auto max-w-6xl px-6">
@@ -733,7 +732,7 @@ function DBookShopCaseStudy() {
                   key={rule}
                   className="flex gap-3 leading-7 text-slate-600 dark:text-slate-400"
                 >
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c3c183]" />
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400 dark:bg-slate-600" />
                   <span>{rule}</span>
                 </li>
               ))}
@@ -744,57 +743,136 @@ function DBookShopCaseStudy() {
       </section>
       {/* Challenges & Solutions */}
       <section className="border-t border-slate-200 py-20 dark:border-slate-800">
-        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-6xl px-6">
 
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Challenges & Solutions
-            </p>
+              <div className="max-w-3xl">
+                <p className="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  Challenges & Solutions
+                </p>
 
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-              Problems worth solving twice
-            </h2>
+                <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                  Problems worth solving carefully
+                </h2>
 
-            <p className="mt-5 leading-7 text-slate-600 dark:text-slate-400">
-              A few problems during development required rethinking how the data
-              layer handles failure and consistency.
-            </p>
+                <p className="mt-5 leading-7 text-slate-600 dark:text-slate-400">
+                  Three problems during development required rethinking how the
+                  application handles consistency and trust. They are documented
+                  here because the reasoning matters more than the code.
+                </p>
+              </div>
+
+              <div className="mt-12 space-y-8">
+
+                    {/* Entry 1 — Cancelled orders */}
+                    <article className="rounded-xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900">
+                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                        Cancelled orders were leaving inventory in an inconsistent state
+                      </h3>
+
+                      <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                        When an order was cancelled, the stock restoration and the order
+                        status update were two separate database operations. If the second
+                        failed — a network blip, a constraint violation — the inventory
+                        would be restored but the order would still show as active, or
+                        vice versa. The result was a slow drift between what the database
+                        said was in stock and what it actually was.
+                      </p>
+
+                      <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                        The fix was to wrap both operations inside a single database
+                        transaction, so either both succeed or neither does. Rolling back
+                        on failure means the system can't end up in the inconsistent
+                        intermediate state at all.
+                      </p>
+
+                      <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                        The lesson was that "two writes that must agree" is a signal that
+                        the two writes belong in the same transaction — not as separate
+                        requests that happen to run one after another.
+                      </p>
+                    </article>
+
+                    {/* Entry 2 — Product images */}
+                    <article className="rounded-xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900">
+                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                        Updated product images weren't appearing after refresh
+                      </h3>
+
+                      <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                        When an admin updated a product image through the dashboard, the
+                        change was saved, but refreshing the product page still showed the
+                        old image. The upload was succeeding — the file was in Cloudinary
+                        and the database had been written to — but the storefront didn't
+                        reflect it.
+                      </p>
+
+                      <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                        The cause was in how product images were stored. Each product can
+                        have multiple images, so they live in a separate{" "}
+                        <code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">
+                          product_images
+                        </code>{" "}
+                        table. Updating an image was inserting a new row without removing
+                        the old one, and the read query returned images in insertion
+                        order. The storefront was faithfully rendering the first image in
+                        the list — which was the one the admin had just replaced.
+                      </p>
+
+                      <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                        The fix was to rewrite the write path as a proper replace
+                        operation: delete the existing image rows and insert the new ones
+                        inside a single database transaction, so either the whole
+                        replacement succeeds or the original images are restored. On the
+                        read side, the query was made explicit about which image is
+                        treated as the primary one.
+                      </p>
+
+                      <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                        The broader lesson was that "multiple writes that must agree" is a
+                        signal that those writes belong in the same transaction. The same
+                        pattern later shaped how order cancellation restores stock — a
+                        different feature, the same underlying problem.
+                      </p>
+                    </article>
+
+                    {/* Entry 3 — Admin authorization */}
+                    <article className="rounded-xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900">
+                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                        Authorization has to be enforced on the server, not the interface
+                      </h3>
+
+                      <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                        The admin dashboard is a separate area of the application with its
+                        own routes, navigation and controls. The straightforward approach
+                        is to hide those controls from users who aren't administrators —
+                        and that's necessary, but it isn't sufficient. Any user can open
+                        the browser's developer tools, read the API endpoint the dashboard
+                        calls, and send the same request directly. The UI is not a
+                        security boundary.
+                      </p>
+
+                      <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                        D-BookShop enforces authorization in two places for two different
+                        reasons. On the frontend, the admin routes are guarded so that
+                        non-administrators never see controls they can't use — a UX
+                        concern, not a security one. On the backend, every administrative
+                        endpoint sits behind middleware that reads the JWT, checks the
+                        role claim, and rejects the request if the user isn't an admin.
+                        The backend never trusts the frontend's decision about who the
+                        user is; it re-derives that from the token on every request.
+                      </p>
+
+                      <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                        The same principle applies to authentication more broadly. A
+                        user's identity is established by the token on the server, not by
+                        the state of the frontend at the moment the request was made. The
+                        frontend can decide what to show; only the server can decide what
+                        to allow.
+                      </p>
+                    </article>
+
+              </div>
           </div>
-
-          <div className="mt-12 space-y-8">
-
-            <article className="rounded-xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900">
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-                Cancelled orders were leaving inventory in an inconsistent state
-              </h3>
-
-              <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
-                When an order was cancelled, the stock restoration and the order
-                status update were two separate database operations. If the second
-                failed — a network blip, a constraint violation — the inventory
-                would be restored but the order would still show as active, or
-                vice versa. The result was a slow drift between what the database
-                said was in stock and what it actually was.
-              </p>
-
-              <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
-                The fix was to wrap both operations inside a single database
-                transaction, so either both succeed or neither does. Rolling back
-                on failure means the system can't end up in the inconsistent
-                intermediate state at all.
-              </p>
-
-              <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
-                The lesson was that "two writes that must agree" is a signal that
-                the two writes belong in the same transaction — not as separate
-                requests that happen to run one after another.
-              </p>
-            </article>
-
-            {/* Add 1–2 more challenges here, following the same structure */}
-
-          </div>
-        </div>
       </section>
       {/* Status & Limitations */}
       <section className="border-t border-slate-200 py-20 dark:border-slate-800">
@@ -832,7 +910,7 @@ function DBookShopCaseStudy() {
                   'Postman collection covering every API endpoint.',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c3c183]" />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400 dark:bg-slate-600" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -852,7 +930,7 @@ function DBookShopCaseStudy() {
                   'No rate limiting or account lockout on authentication endpoints.',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c3c183]" />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400 dark:bg-slate-600" />
                     <span>{item}</span>
                   </li>
                 ))}

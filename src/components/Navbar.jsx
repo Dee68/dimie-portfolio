@@ -33,12 +33,15 @@ function Navbar() {
     <nav className="fixed top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link to="/" onClick={closeMenu} className="flex items-center">
+        {/* <Link to="/" onClick={closeMenu} className="flex items-center">
           <img
             src="/images/Logo.png"
             alt="DWE Portfolio"
             className="h-12 object-contain"
           />
+        </Link> */}
+        <Link to="/" onClick={closeMenu} className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
+          DWE
         </Link>
 
         {/* Desktop nav */}

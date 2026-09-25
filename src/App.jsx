@@ -32,15 +32,15 @@ function PortfolioHome() {
         className="flex min-h-screen items-center justify-center bg-white px-6 pt-20 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white"
       >
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-[#8a8757] dark:text-[#c3c183]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
             Welcome to my portfolio
           </p>
 
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-slate-900 dark:text-white">
             Dimie Egberipou
           </h1>
 
-          <p className="mt-6 text-xl font-medium text-slate-700 dark:text-slate-300 sm:text-2xl">
+          <p className="mt-6 text-xl font-medium text-#45402F text-slate-700 dark:text-slate-300 sm:text-2xl">
             Computing Graduate | Software Developer
           </p>
 
@@ -61,7 +61,7 @@ function PortfolioHome() {
               href="https://github.com/Dee68"
               target="_blank"
               rel="noreferrer"
-              className="rounded-lg border border-slate-300 px-6 py-3 font-medium text-slate-900 transition hover:bg-slate-100 dark:border-slate-700 dark:text-white dark:hover:bg-slate-900"
+              className="rounded-lg border border-slate-300 dark:border-slate-700 px-6 py-3 font-medium text-slate-900 transition hover:bg-slate-100 dark:border-slate-700 dark:text-white dark:hover:bg-slate-900"
             >
               GitHub
             </a>

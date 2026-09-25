@@ -75,7 +75,7 @@ function Contact() {
   }
 
   const inputBase =
-    'w-full rounded-lg border bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 transition focus:outline-none focus:ring-2 focus:ring-slate-900 dark:bg-slate-950 dark:text-white dark:placeholder:text-slate-500 dark:focus:ring-slate-200'
+    'w-full rounded-lg border bg-white px-4 py-3 text-slate-900 placeholder:text-[slate-400] transition focus:outline-none focus:ring-2 focus:ring-slate-900 dark:bg-slate-950 dark:text-white dark:placeholder:text-slate-500 dark:focus:ring-slate-200'
 
   const inputBorder = (field) =>
     errors[field]
@@ -89,7 +89,7 @@ function Contact() {
     >
       <div className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-[#8a8757] dark:text-[#c3c183]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
             Contact
           </p>
 
@@ -97,7 +97,7 @@ function Contact() {
             Let's connect.
           </h2>
 
-          <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-400">
+          <p className="mt-5 text-lg leading-8 text-[slate-600] dark:text-slate-400">
             I am open to opportunities in software development and
             technology. If you would like to discuss a project,
             apprenticeship or career opportunity, feel free to get in touch.
@@ -138,7 +138,7 @@ function Contact() {
             <div>
               <label
                 htmlFor="email"
-                className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                className="mb-2 block text-sm font-medium text-slate-700 dark:text-[slate-300]"
               >
                 Email
               </label>
