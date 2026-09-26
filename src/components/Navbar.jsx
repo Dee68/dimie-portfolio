@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { FiMenu, FiX } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 import NavItem from './NavItem'
@@ -77,7 +78,7 @@ function Navbar() {
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
         >
-          <span className="text-xl leading-none">{menuOpen ? '×' : '☰'}</span>
+          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>
 

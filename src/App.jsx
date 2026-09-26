@@ -52,7 +52,7 @@ function PortfolioHome() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
               href="#projects"
-              className="rounded-lg bg-slate-900 px-6 py-3 font-medium text-white transition hover:bg-[#8a8757] dark:bg-white dark:text-slate-950 dark:hover:bg-[#c3c183] dark:hover:text-slate-950"
+              className="rounded-lg bg-slate-900 px-6 py-3 font-medium text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
             >
               View My Projects
             </a>
@@ -61,7 +61,7 @@ function PortfolioHome() {
               href="https://github.com/Dee68"
               target="_blank"
               rel="noreferrer"
-              className="rounded-lg border border-slate-300 dark:border-slate-700 px-6 py-3 font-medium text-slate-900 transition hover:bg-slate-100 dark:border-slate-700 dark:text-white dark:hover:bg-slate-900"
+              className="rounded-lg border border-slate-300 px-6 py-3 font-medium text-slate-900 transition hover:bg-slate-100 dark:border-slate-700 dark:text-white dark:hover:bg-slate-900"
             >
               GitHub
             </a>

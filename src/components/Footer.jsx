@@ -1,3 +1,5 @@
+import { FiGithub, FiArrowUp } from 'react-icons/fi'
+
 function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white px-6 py-8 transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950">
@@ -11,16 +13,18 @@ function Footer() {
             href="https://github.com/Dee68"
             target="_blank"
             rel="noreferrer"
-            className="text-sm text-slate-500 transition hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+            className="inline-flex items-center gap-2 text-sm text-slate-500 transition hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
           >
-            GitHub
+            <FiGithub size={16} />
+            <span>GitHub</span>
           </a>
 
           <a
             href="#home"
-            className="text-sm text-slate-500 transition hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+            className="inline-flex items-center gap-2 text-sm text-slate-500 transition hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
           >
-            Back to top ↑
+            <span>Back to top</span>
+            <FiArrowUp size={16} />
           </a>
         </div>
       </div>

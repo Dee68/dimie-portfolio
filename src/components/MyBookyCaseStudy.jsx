@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
-import { FiArrowLeft, FiInfo } from 'react-icons/fi'
+import { FiArrowLeft, FiInfo, FiExternalLink } from 'react-icons/fi'
 import Footer from './Footer'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 

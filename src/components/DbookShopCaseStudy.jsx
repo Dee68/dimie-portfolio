@@ -17,13 +17,13 @@ function DBookShopCaseStudy() {
          <div className="h-0.5 w-full bg-[#c3c183]" />
           <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 
-           <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 transition hover:text-[#8a8757] dark:text-slate-300 dark:hover:text-[#c3c183]"
-            >
-              <FiArrowLeft size={16} />
-              <span>Back to Projects</span>
-            </Link>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 transition hover:text-slate-950 dark:text-slate-300 dark:hover:text-white"
+          >
+            <FiArrowLeft size={16} />
+            <span>Back to Projects</span>
+          </Link>
 
             <div className="flex items-center gap-3">
               <ThemeToggle />
@@ -111,6 +111,8 @@ function DBookShopCaseStudy() {
                 <img
                     src="/projects/d-bookshop/d-bookshop-home.png"
                     alt="D-BookShop storefront showing the homepage, search, category filtering and book catalogue"
+                    width={2266}
+                    height={1450}
                     className="w-full"
                 />
             </div>
@@ -318,6 +320,8 @@ function DBookShopCaseStudy() {
     <img
       src="/projects/d-bookshop/d-bookshop-product.png"
       alt="D-BookShop product details page"
+      width={2246}
+      height={1470}
       className="w-full"
       loading="lazy"
     />
@@ -330,6 +334,8 @@ function DBookShopCaseStudy() {
     <img
       src="/projects/d-bookshop/d-bookshop-cart.png"
       alt="D-BookShop customer cart page"
+      width={2240}
+      height={1470}
       className="w-full"
       loading="lazy"
     />
@@ -342,6 +348,8 @@ function DBookShopCaseStudy() {
     <img
       src="/projects/d-bookshop/d-bookshop-checkout.png"
       alt="D-BookShop customer checkout page"
+      width={2252}
+      height={1466}
       className="w-full"
       loading="lazy"
     />
@@ -354,6 +362,8 @@ function DBookShopCaseStudy() {
     <img
       src="/projects/d-bookshop/d-bookshop-customer-order.png"
       alt="D-BookShop customer order page"
+      width={2254}
+      height={1466}
       className="w-full"
       loading="lazy"
     />
@@ -366,6 +376,8 @@ function DBookShopCaseStudy() {
     <img
       src="/projects/d-bookshop/d-bookshop-admin.png"
       alt="D-BookShop admin dashboard"
+      width={2248}
+      height={1462}
       className="w-full"
       loading="lazy"
     />
@@ -378,6 +390,8 @@ function DBookShopCaseStudy() {
     <img
       src="/projects/d-bookshop/d-bookshop-stock.png"
       alt="D-BookShop admin inventory management"
+      width={2234}
+      height={1460}
       className="w-full"
       loading="lazy"
     />
@@ -390,6 +404,8 @@ function DBookShopCaseStudy() {
     <img
       src="/projects/d-bookshop/d-bookshop-report.png"
       alt="D-BookShop admin inventory report"
+      width={2058}
+      height={1464}
       className="w-full"
       loading="lazy"
     />
