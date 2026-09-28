@@ -9,6 +9,7 @@ import Skills from './components/Skills'
 import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import AccommManagementCaseStudy from './components/AccommManagementCaseStudy'
 import MyBookyCaseStudy from './components/MyBookyCaseStudy'
 import DBookShopCaseStudy from './components/DbookShopCaseStudy'
 import { useDocumentTitle } from './hooks/useDocumentTitle'
@@ -92,6 +93,7 @@ function App() {
               </main>
             }
           />
+          <Route path="/projects/accomm-management" element={<AccommManagementCaseStudy />} />
           <Route path="/projects/d-bookshop" element={<DBookShopCaseStudy />} />
           <Route path="/projects/mybooky" element={<MyBookyCaseStudy />} />
         </Routes>

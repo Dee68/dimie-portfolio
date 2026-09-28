@@ -3,6 +3,28 @@ import ProjectCard from './ProjectCard'
 function Projects() {
   const projects = [
     {
+      title: 'Accommodation Center',
+      description:
+        'A full-stack platform for managing residential buildings: tenants, apartments, maintenance issues, and a community forum. Built with Django, Next.js, and PostgreSQL, containerised with Docker and nginx, with Celery for background tasks.',
+      technologies: [
+        'Django',
+        'Next.js',
+        'Django RestFrameWork',
+        'PostgreSQL',
+        'JWT',
+        'Tailwind CSS',
+        'REST API',
+        'Swagger',
+        'NGiNX',
+        'Celery',
+        'MailPit',
+      ],
+      githubUrl: 'https://github.com/Dee68/accomm_mngt',
+      caseStudyUrl: '/projects/accomm-management',
+      demoStatus: 'Runs locally — not currently deployed',
+      status: 'Featured',
+    },
+    {
       title: 'D-BookShop — Full-Stack E-Commerce Platform',
       description:
         'A production-deployed full-stack e-commerce application built with React, Node.js, Express and PostgreSQL. Features include authentication, role-based access control, product and inventory management, shopping cart, checkout, order management, email verification and an administrative dashboard.',

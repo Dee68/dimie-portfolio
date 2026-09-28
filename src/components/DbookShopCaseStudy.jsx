@@ -14,7 +14,6 @@ function DBookShopCaseStudy() {
       <section id="home" className="border-b border-slate-200 dark:border-slate-800">
 
         <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
-         <div className="h-0.5 w-full bg-[#c3c183]" />
           <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 
           <Link
