@@ -91,6 +91,7 @@ function DBookShopCaseStudy() {
               rel="noreferrer"
               className="inline-flex items-center rounded-lg bg-slate-900 px-5 py-3 font-medium text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
             >
+              <span className="mr-2 h-2 w-2 rounded-full bg-emerald-500" />
               Live Demo
               <FiExternalLink className="ml-2" size={16} />
             </a>

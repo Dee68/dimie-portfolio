@@ -21,7 +21,7 @@ function Projects() {
       ],
       githubUrl: 'https://github.com/Dee68/accomm_mngt',
       caseStudyUrl: '/projects/accomm-management',
-      demoStatus: 'Runs locally — not currently deployed',
+      demoUrl: 'https://dimie.dev',
       status: 'Featured',
     },
     {
@@ -39,7 +39,7 @@ function Projects() {
       ],
       githubUrl: 'https://github.com/Dee68/D_BookShop',
       caseStudyUrl: '/projects/d-bookshop',
-      demoUrl: 'https://d-book-shop.vercel.app',
+      demoUrl: 'https://dbookshop.com',
       status: 'Featured',
     },
     {

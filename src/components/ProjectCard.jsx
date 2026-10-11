@@ -89,7 +89,7 @@ function ProjectCard({
     >
       Live Demo
       <span className="ml-2">
-        <FiArrowRight size={16}/>
+        <FiExternalLink className='ml-2' size={16}/>
       </span>
     </a>
   )}
