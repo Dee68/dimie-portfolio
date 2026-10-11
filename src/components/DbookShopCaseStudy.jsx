@@ -109,7 +109,7 @@ function DBookShopCaseStudy() {
             </div>
             <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 shadow-2xl dark:border-slate-800">
                 <img
-                    src="/projects/d-bookshop/d-bookshop-home.png"
+                    src="/projects/d-bookshop/d-bookshop-home.webp"
                     alt="D-BookShop storefront showing the homepage, search, category filtering and book catalogue"
                     width={2266}
                     height={1450}
