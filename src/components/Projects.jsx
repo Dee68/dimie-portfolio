@@ -61,19 +61,6 @@ function Projects() {
       status: 'Featured',
     },
     {
-      title: 'Buyify',
-      description:
-        'A Shopify-inspired e-commerce application currently under development, exploring full-stack architecture and online shopping functionality.',
-      technologies: [
-        'Django',
-        'Django REST Framework',
-        'PostgreSQL',
-        'Docker',
-      ],
-      githubUrl: 'https://github.com/Dee68/buyify',
-      status: 'Work in Progress',
-    },
-    {
       title: 'Python Game Development',
       description:
         'Two desktop games built to explore Python outside of web development. The Tkinter project focuses on GUI construction, game states and event-driven programming; the Pygame project explores real-time gameplay and game loops. Both repositories are available on GitHub.',

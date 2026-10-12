@@ -39,7 +39,7 @@ function MyBookyCaseStudy() {
         </header>
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
           
-          <div className="mt-10 max-w-4xl">
+          <div className="max-w-4xl">
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
               Featured Project
             </p>
@@ -128,7 +128,7 @@ function MyBookyCaseStudy() {
 
                 <p>
                   The project evolved from an initial MVC implementation into
-                  an N-tier architecture to improve separation of concerns,
+                  an N-layer architecture to improve separation of concerns,
                   organisation and maintainability.
                 </p>
               </div>
@@ -161,7 +161,7 @@ function MyBookyCaseStudy() {
                     Architecture
                   </dt>
                   <dd className="mt-1 font-medium">
-                    ASP.NET Core MVC / N-tier
+                    ASP.NET Core MVC / N-layer
                   </dd>
                 </div>
 
@@ -253,7 +253,7 @@ function MyBookyCaseStudy() {
             </p>
 
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              From MVC to N-tier architecture
+              From MVC to N-layer architecture
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-400">
@@ -267,12 +267,12 @@ function MyBookyCaseStudy() {
           <figure className="mt-10 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
             <img
               src="/projects/mybooky/n-tier-architecture.png"
-              alt="MyBooky N-tier architecture diagram"
+              alt="MyBooky N-layer architecture diagram"
               className="w-full"
             />
 
             <figcaption className="border-t border-slate-200 px-5 py-4 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400">
-              N-tier architecture used to separate models, data access,
+              N-layer architecture used to separate models, data access,
               utilities and the main MVC application.
             </figcaption>
           </figure>
@@ -544,7 +544,7 @@ function MyBookyCaseStudy() {
 
               <p className="mt-4 leading-8 text-slate-600 dark:text-slate-400">
                 The initial implementation was subsequently restructured into
-                an N-tier architecture. This redevelopment was used to improve
+                an N-layer architecture. This redevelopment was used to improve
                 modularity and separation of concerns.
               </p>
             </article>
@@ -555,10 +555,9 @@ function MyBookyCaseStudy() {
               </h3>
 
               <p className="mt-4 leading-8 text-slate-600 dark:text-slate-400">
-                Time constraints affected the planned testing strategy.
-                Instead of implementing the originally planned Selenium
-                automation, the project used xUnit, Moq and manual functional
-                testing.
+                Time constraints affected the testing strategy. The originally
+                planned Selenium automation was replaced with xUnit, Moq, and
+                manual functional testing.
               </p>
             </article>
 
@@ -571,7 +570,7 @@ function MyBookyCaseStudy() {
                 The project strengthened my understanding of ASP.NET Core MVC,
                 authentication and authorisation, database design, and software
                 architecture. The most valuable lesson was learning to refactor
-                a working but poorly-structured implementation into an N-tier
+                a working but poorly-structured implementation into an N-layer
                 design — accepting the short-term cost of restructuring in exchange
                 for longer-term clarity.
               </p>

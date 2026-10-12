@@ -246,7 +246,6 @@ function AccommManagementCaseStudy(){
                             </dt>
                             <dd className="mt-1 font-medium">
                              Railway
-                            
                             </dd>
                         </div>
                         </dl>
@@ -808,7 +807,7 @@ function AccommManagementCaseStudy(){
                         loading="lazy"
                     />
                     <p className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
-                        A captured report and warning confirmation emails in Resend. The template is rendered by Django, sent through Celery, and intercepted locally — the same code path that would deliver it to a real inbox in production.
+                      Captured report and warning emails. The templates are rendered by Django, routed through Celery, and delivered via Resend — the same code path that runs locally with Mailpit intercepting.
                     </p>
                     </div>
 
