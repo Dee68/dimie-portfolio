@@ -569,9 +569,11 @@ function MyBookyCaseStudy() {
 
               <p className="mt-4 leading-8 text-slate-600 dark:text-slate-400">
                 The project strengthened my understanding of ASP.NET Core MVC,
-                authentication and authorisation, database design, software
-                architecture, testing and the importance of adapting a design
-                when implementation challenges emerge.
+                authentication and authorisation, database design, and software
+                architecture. The most valuable lesson was learning to refactor
+                a working but poorly-structured implementation into an N-tier
+                design — accepting the short-term cost of restructuring in exchange
+                for longer-term clarity.
               </p>
             </article>
           </div>
@@ -591,10 +593,13 @@ function MyBookyCaseStudy() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-400">
-              MyBooky was previously deployed to Microsoft Azure as part of
-              the project. The original deployment is no longer active, so
-              this portfolio presents the application's functionality through
-              screenshots, architecture documentation and the source code.
+              MyBooky was deployed to Microsoft Azure App Service as part of
+              the original project, with a CI/CD pipeline running on Azure
+              DevOps. The deployment was scaled down after the degree
+              concluded; the pipeline configuration and deployment scripts
+              remain in the repository. This portfolio presents the
+              application's functionality through screenshots, architecture
+              documentation, and the source code.
             </p>
 
             <div className="mt-8">

@@ -57,12 +57,11 @@ function AccommManagementCaseStudy(){
                             </p>
 
                             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-400">
-                            A full-stack platform for managing residential buildings: tenants are
-                            assigned to apartments, maintenance issues are tracked from report to
-                            resolution, and a community forum supports discussion between residents.
-                            Built with Django, Next.js, PostgreSQL, and Celery, deployed as separate
-                            web and worker services, with media on Cloudinary and authentication
-                            supporting both passwords and Google OAuth.
+                            A full-stack platform for managing residential buildings: tenants,
+                            apartments, maintenance issues, and a community forum. Built with
+                            Django, Next.js, and PostgreSQL, deployed as separate web and worker
+                            services on Railway, with Celery for background tasks and Cloudinary
+                            for media.
                             </p>
 
                             <div className="mt-8 flex flex-wrap gap-3">
@@ -104,7 +103,7 @@ function AccommManagementCaseStudy(){
                                 className="inline-flex items-center rounded-lg border border-slate-300 px-5 py-3 font-medium text-slate-900 transition hover:bg-slate-100 dark:border-slate-700 dark:text-white dark:hover:bg-slate-900"
                             >
                                 <span className="mr-2 h-2 w-2 rounded-full bg-emerald-500" />
-                                View Live Site
+                                Live Demo
                                 <FiExternalLink className="ml-2" size={16} />
                             </a>
 
@@ -157,12 +156,13 @@ function AccommManagementCaseStudy(){
 
                         <p>
                             The stack is deliberately familiar to teams that build real
-                            products. Django 5 with Django REST Framework on the backend,
+                            products. Django and Django REST Framework on the backend,
                             Next.js and TypeScript on the frontend, PostgreSQL for storage.
                             Authentication is JWT-based but stored in HttpOnly cookies rather
-                            than localStorage. Everything runs in Docker, with nginx as the
-                            reverse proxy, Celery and Redis for background work, Flower for
-                            task monitoring, and Mailpit for local email capture.
+                            than localStorage. Background work runs on Celery with Redis as
+                            the broker. The frontend and backend deploy as separate services
+                            behind TLS-terminated hostnames, with media on Cloudinary and
+                            transactional email routed through Resend.
                         </p>
 
                         <p>
@@ -797,18 +797,18 @@ function AccommManagementCaseStudy(){
                     <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 shadow-xl dark:border-slate-800">
                     <img
                         src="/projects/accomm_management/reportEmail1.webp"
-                        alt="Resend showing a captured issue confirmation email with the issue title and a message from the Accommodation Centre team"
+                        alt="Resend showing a captured report email with the issue title and a message from the Accommodation Centre team"
                         className="w-full"
                         loading="lazy"
                     />
                     <img
                         src="/projects/accomm_management/reportEmail.webp"
-                        alt="Resend showing a captured issue confirmation email with the issue title and a message from the Accommodation Centre team"
+                        alt="Resend showing a captured warning email with the issue title and a message from the Accommodation Centre team"
                         className="w-full"
                         loading="lazy"
                     />
                     <p className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
-                        A captured issue confirmation email in Resend. The template is rendered by Django, sent through Celery, and intercepted locally — the same code path that would deliver it to a real inbox in production.
+                        A captured report and warning confirmation emails in Resend. The template is rendered by Django, sent through Celery, and intercepted locally — the same code path that would deliver it to a real inbox in production.
                     </p>
                     </div>
 
@@ -1402,7 +1402,6 @@ function AccommManagementCaseStudy(){
                 <p className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
                     Swagger UI, generated from the API schema. Every endpoint is explorable, every request and response shape is documented, and nothing was written by hand.
                 </p>
-                  {/* add swagger link here */}
                     <a
                                 href="https://api.dimie.dev/api/v1/docs/"
                                 target="_blank"
@@ -1430,11 +1429,20 @@ function AccommManagementCaseStudy(){
                 </h2>
 
                 <p className="mt-5 leading-7 text-slate-600 dark:text-slate-400">
-                    Accommodation Center is a development-stage application, not a
-                    deployed product. It runs locally through Docker and is intended as
-                    a demonstration of full-stack architecture and domain modelling,
-                    not as a live service. Being direct about that is part of knowing
-                    what the project is.
+                    Accommodation Center is a live application with a small user base,
+                    deployed on Railway and accessible at{' '}
+                    <a
+                        href="https://dimie.dev"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700 dark:text-white dark:hover:text-slate-300"
+                    >
+                        dimie.dev
+                    </a>
+                    . It is also a portfolio piece: the architecture, the domain
+                    modelling, and the production decisions are documented here for
+                    anyone evaluating the work. Being direct about both purposes is
+                    part of knowing what the project is.
                 </p>
                 </div>
 

@@ -47,7 +47,7 @@ function PortfolioHome() {
           </p>
 
           <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400">
-            Building practical full-stack applications and developing expertise in cybersecurity.
+            Building practical full-stack applications end to end — from data model to deployment.
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
