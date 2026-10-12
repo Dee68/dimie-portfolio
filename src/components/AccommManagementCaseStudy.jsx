@@ -823,7 +823,7 @@ function AccommManagementCaseStudy(){
                         </p>
 
                         <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-                            From nine Docker services to four Railway services
+                            From nine Docker services to Five Railway services
                         </h2>
 
                         <p className="mt-5 leading-7 text-slate-600 dark:text-slate-400">
@@ -831,7 +831,7 @@ function AccommManagementCaseStudy(){
                             orchestrating nine services behind an nginx reverse proxy. Moving
                             to production meant deciding, for each of those services, whether
                             it should keep running — and if so, in what shape. The result is
-                            a smaller, more resilient topology on Railway: four services, one
+                            a smaller, more resilient topology on Railway: five services, one
                             managed database, and no reverse proxy to maintain.
                         </p>
                     </div>
@@ -852,7 +852,7 @@ function AccommManagementCaseStudy(){
                                     'The App Router build, deployed as its own service. Talks to the API over HTTPS at api.dimie.dev.',
                             },
                             {
-                                service: 'worker',
+                                service: 'celery_workers',
                                 role: 'Celery worker',
                                 detail:
                                     'Consumes tasks from the Redis queue. Runs as a separate service rather than a backgrounded process inside api — a crash restarts the worker without touching the web tier.',
@@ -892,6 +892,18 @@ function AccommManagementCaseStudy(){
                             </article>
                         ))}
                     </div>
+                     {/* Screenshot */}
+                <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 shadow-xl dark:border-slate-800">
+                <img
+                    src="/projects/accomm_management/railway-dashboard.webp"
+                    alt="The Accommodation Center Deployment On Railway with 5 services"
+                    className="w-full"
+                    loading="lazy"
+                />
+                <p className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+                    The 5 Railway services
+                </p>
+                </div>
 
                     {/* What changed */}
                     <div className="mt-12">
@@ -1030,7 +1042,7 @@ function AccommManagementCaseStudy(){
 
                                     <div>
                                         <p className="mb-2 font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                                            After — worker service
+                                            After — celery_workers service
                                         </p>
                                         <pre className="overflow-x-auto rounded-lg bg-slate-900 p-4 text-sm text-slate-100 dark:bg-slate-950">
                                             <code>{`# workers.sh
@@ -1462,7 +1474,7 @@ function AccommManagementCaseStudy(){
                             'API documentation generated from the codebase with Swagger and ReDoc.',
                             'Test suite: 333 pytest tests covering models, views, serializers, permissions, forms, admin configuration, signals, background tasks, email delivery, and URL routing.',
                             'Local development environment: nine Docker services behind an nginx reverse proxy.',
-                            'Production deployment: four Railway services (api, client, worker, and managed Postgres and Redis) behind TLS-terminated hostnames at dimie.dev and api.dimie.dev.',
+                            'Production deployment: four Railway services (api, client, celery_workers, and managed Postgres and Redis) behind TLS-terminated hostnames at dimie.dev and api.dimie.dev.',
                         ].map((item) => (
                             <li key={item} className="flex gap-3">
                                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400 dark:bg-slate-600" />
