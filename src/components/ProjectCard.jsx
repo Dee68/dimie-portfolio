@@ -56,50 +56,47 @@ function ProjectCard({
         </div>
 
        
-        <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
-  {githubUrl && (
-    <a
-      href={githubUrl}
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center font-medium text-slate-900 transition hover:text-slate-600 dark:text-white dark:hover:text-slate-300"
-    >
-      View on GitHub
-     <FiExternalLink className="ml-2" size={16} />
-    </a>
-  )}
+               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center font-medium text-slate-900 transition hover:text-slate-600 dark:text-white dark:hover:text-slate-300"
+            >
+              View on GitHub
+              <FiExternalLink className="ml-2" size={16} />
+            </a>
+          )}
 
-  {caseStudyUrl && (
-    <a
-      href={caseStudyUrl}
-      className="inline-flex items-center font-medium text-slate-700 transition hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-100"
-    >
-      Project Case Study
-     <FiArrowRight className="ml-2" size={16} />
-      
-    </a>
-  )}
+          {caseStudyUrl && (
+            <a
+              href={caseStudyUrl}
+              className="inline-flex items-center font-medium text-slate-700 transition hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-100"
+            >
+              Project Case Study
+              <FiArrowRight className="ml-2" size={16} />
+            </a>
+          )}
 
-  {demoUrl && (
-    <a
-      href={demoUrl}
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center font-medium text-slate-700 transition hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-100"
-    >
-      Live Demo
-      <span className="ml-2">
-        <FiExternalLink className='ml-2' size={16}/>
-      </span>
-    </a>
-  )}
+          {demoUrl && (
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center font-medium text-slate-700 transition hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-100"
+            >
+              Live Demo
+              <FiExternalLink className="ml-2" size={16} />
+            </a>
+          )}
+        </div>
 
-  {demoStatus && (
-    <span className="text-sm text-slate-500 dark:text-slate-500">
-      {demoStatus}
-    </span>
-  )}
-</div>
+        {demoStatus && (
+          <p className="mt-3 text-sm text-slate-500 dark:text-slate-500">
+            {demoStatus}
+          </p>
+        )}
       </div>
     </article>
   )

@@ -57,7 +57,7 @@ function Projects() {
       ],
       githubUrl: 'https://github.com/Dee68/MyBooky',
       caseStudyUrl: '/projects/mybooky',
-      demoStatus: 'Deployment: Previously deployed to Microsoft Azure; the original deployment is currently offline.',
+      demoStatus: 'Demo offline',
       status: 'Featured',
     },
     {
