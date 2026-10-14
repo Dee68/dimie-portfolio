@@ -5,7 +5,7 @@ function Projects() {
     {
       title: 'Accommodation Center',
       description:
-        'A full-stack platform for managing residential buildings: tenants,apartments, maintenance issues, and a community forum. Built with Django, Next.js, and PostgreSQL, deployed as separate web and worker services on Railway, with Celery for background tasks and Cloudinary for media.',
+        'A full-stack platform for managing residential buildings: tenants, apartments, maintenance issues, and a community forum. Built with Django, Next.js, and PostgreSQL, deployed as separate web and worker services on Railway, with Celery for background tasks and Cloudinary for media.',
       technologies: [
         'Django',
         'Next.js',
