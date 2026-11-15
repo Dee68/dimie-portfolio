@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
-import { FiArrowLeft, FiArrowRight, FiExternalLink } from 'react-icons/fi'
+import { FiArrowLeft, FiExternalLink } from 'react-icons/fi'
 import Footer from './Footer'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
@@ -76,6 +76,8 @@ function AccommManagementCaseStudy(){
                                 'Cloudinary',
                                 'Railway',
                                 'Tailwind CSS',
+                                'TanStack Query', 
+                                'Zustand', 
                             ].map((technology) => (
                                 <span
                                 key={technology}
@@ -407,6 +409,73 @@ function AccommManagementCaseStudy(){
                 </div>
 
             </div>
+            </section>
+            {/* Frontend Architecture */}
+            <section className="border-t border-slate-200 py-20 dark:border-slate-800">
+                <div className="mx-auto max-w-6xl px-6">
+
+                    <div className="max-w-3xl">
+                    <p className="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                        Frontend Architecture
+                    </p>
+
+                    <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                        Separating server state from client state
+                    </h2>
+
+                    <p className="mt-5 leading-7 text-slate-600 dark:text-slate-400">
+                        The initial frontend architecture used Redux Toolkit and RTK Query. As the application grew, the distinction between server state (fetched data that needs caching and invalidation) and client state (UI filters, authentication flags) became blurred. The entire frontend was recently migrated to a modern, specialised stack: <strong>TanStack Query</strong> for server state and <strong>Zustand</strong> for client state.
+                    </p>
+                    </div>
+
+                    {/* What changed grid */}
+                    <div className="mt-12 grid gap-6 md:grid-cols-2">
+                    <article className="rounded-xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-900">
+                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                        TanStack Query (Server State)
+                        </h3>
+
+                        <p className="mt-3 leading-7 text-slate-600 dark:text-slate-400">
+                        Replaced RTK Query. Endpoints are now managed by custom hooks (e.g., <code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">useAllPosts</code>). Built-in caching, background refetching, and structural sharing mean the UI stays fast without manual state management. Optimistic UI updates (like upvoting a post) are handled natively via the <code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">onMutate</code> lifecycle, instantly updating the UI while the request is in flight.
+                        </p>
+                    </article>
+
+                    <article className="rounded-xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-900">
+                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                        Zustand (Client State)
+                        </h3>
+
+                        <p className="mt-3 leading-7 text-slate-600 dark:text-slate-400">
+                        Replaced the Redux slices. Zustand provides minimal, direct access to global UI state without the boilerplate of actions and reducers. Authentication flags, user data, and search filters now live in focused stores like <code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">useAuthStore</code> and <code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">useUserFiltersStore</code>. This separation means server data is never accidentally persisted or mutated on the client.
+                        </p>
+                    </article>
+                    </div>
+
+                    {/* Implementation details */}
+                    <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900">
+                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                            The migration process
+                        </h3>
+
+                        <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
+                            The migration was executed domain-by-domain (Auth first, then Posts, Issues, Users, etc.) over several days. Each domain received its own API client file and Query hook file. Crucially, the migration prioritised safety: a git tag (<code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">pre-tanstack-migration</code>) was created before the final deletion of <code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">lib/redux/</code>, providing a clean rollback path if required. The final result removed all Redux boilerplate while preserving the exact same UI behaviour, alongside a measurable reduction in the client bundle size.
+                        </p>
+                    </div>
+
+                    {/* Screenshot */}
+                    <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 shadow-xl dark:border-slate-800">
+                    <img
+                        src="/projects/accomm_management/tanstack-devtools.webp"
+                        alt="TanStack Query Devtools showing hydrated cache for posts, user profiles, and issues"
+                        className="w-full"
+                        loading="lazy"
+                    />
+                    <p className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+                        TanStack Query Devtools showing real-time cache hydration. Replacing Redux with TanStack Query and Zustand eliminated dual-state bugs, simplified auth handling, and improved frontend performance.
+                    </p>
+                    </div>
+
+                </div>
             </section>
             {/* Authentication & Security */}
             <section className="border-t border-slate-200 py-20 dark:border-slate-800">
@@ -849,7 +918,7 @@ function AccommManagementCaseStudy(){
                                 service: 'client',
                                 role: 'Next.js frontend',
                                 detail:
-                                    'The App Router build, deployed as its own service. Talks to the API over HTTPS at api.dimie.dev.',
+                                    'The App Router build (using TanStack Query + Zustand), deployed as its own service. Talks to the API over HTTPS at api.dimie.dev.',
                             },
                             {
                                 service: 'celery_workers',
@@ -1473,6 +1542,7 @@ function AccommManagementCaseStudy(){
                             'Media handling: profile avatars uploaded to Cloudinary, keeping the application container stateless.',
                             'API documentation generated from the codebase with Swagger and ReDoc.',
                             'Test suite: 333 pytest tests covering models, views, serializers, permissions, forms, admin configuration, signals, background tasks, email delivery, and URL routing.',
+                            'Full frontend migration from Redux to TanStack Query + Zustand, separating server state from client state and reducing the bundle size.',
                             'Local development environment: nine Docker services behind an nginx reverse proxy.',
                             'Production deployment: four Railway services (api, client, celery_workers, and managed Postgres and Redis) behind TLS-terminated hostnames at dimie.dev and api.dimie.dev.',
                         ].map((item) => (
