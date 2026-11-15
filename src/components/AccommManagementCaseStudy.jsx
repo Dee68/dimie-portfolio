@@ -458,20 +458,26 @@ function AccommManagementCaseStudy(){
                         </h3>
 
                         <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
-                            The migration was executed domain-by-domain (Auth first, then Posts, Issues, Users, etc.) over several days. Each domain received its own API client file and Query hook file. Crucially, the migration prioritised safety: a git tag (<code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">pre-tanstack-migration</code>) was created before the final deletion of <code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">lib/redux/</code>, providing a clean rollback path if required. The final result removed all Redux boilerplate while preserving the exact same UI behaviour, alongside a measurable reduction in the client bundle size.
+                            The migration was executed domain-by-domain (Auth first, then Posts, Issues, Users, etc.) over several days. Each domain received its own API client file and Query hook file. Crucially, the migration prioritised safety: a git tag (<code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">pre-tanstack-migration</code>) was created before the final deletion of <code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm dark:bg-slate-800">lib/redux/</code>, providing a clean rollback path if required. The final result removed all Redux boilerplate and improved upon the original UI — the login flow now redirects cleanly on the first attempt, and the profile Reports tab no longer crashes when its query is still loading. Redux and RTK Query were eliminated from the bundle, alongside a meaningful reduction in First Load JS.
                         </p>
                     </div>
 
                     {/* Screenshot */}
                     <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 shadow-xl dark:border-slate-800">
-                    <img
-                        src="/projects/accomm_management/tanstack-devtools.webp"
-                        alt="TanStack Query Devtools showing hydrated cache for posts, user profiles, and issues"
-                        className="w-full"
-                        loading="lazy"
-                    />
+                        <img
+                            src="/projects/accomm_management/tanstack-post.webp"
+                            alt="TanStack Query Devtools showing cached post lists, top posts, and popular tags alongside the current user profile"
+                            className="w-full"
+                            loading="lazy"
+                        />
+                        <img
+                            src="/projects/accomm_management/tanstack-profile.webp"
+                            alt="TanStack Query Devtools showing parallel fetches for user profile, my-posts, my-issues, and my-reports"
+                            className="w-full"
+                            loading="lazy"
+                        />
                     <p className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
-                        TanStack Query Devtools showing real-time cache hydration. Replacing Redux with TanStack Query and Zustand eliminated dual-state bugs, simplified auth handling, and improved frontend performance.
+                      Two views of the TanStack Query Devtools during a live session. The first shows the posts feed hydrating its cache; the second shows the profile page firing four independent queries in parallel. Replacing Redux with TanStack Query and Zustand eliminated dual-state bugs, simplified auth handling, and improved frontend performance.
                     </p>
                     </div>
 
@@ -1542,7 +1548,7 @@ function AccommManagementCaseStudy(){
                             'Media handling: profile avatars uploaded to Cloudinary, keeping the application container stateless.',
                             'API documentation generated from the codebase with Swagger and ReDoc.',
                             'Test suite: 333 pytest tests covering models, views, serializers, permissions, forms, admin configuration, signals, background tasks, email delivery, and URL routing.',
-                            'Full frontend migration from Redux to TanStack Query + Zustand, separating server state from client state and reducing the bundle size.',
+                            'Full frontend migration from Redux to TanStack Query + Zustand, separating server state from client state alongside a meaningful reduction in the client bundle size.',
                             'Local development environment: nine Docker services behind an nginx reverse proxy.',
                             'Production deployment: four Railway services (api, client, celery_workers, and managed Postgres and Redis) behind TLS-terminated hostnames at dimie.dev and api.dimie.dev.',
                         ].map((item) => (
